@@ -3,10 +3,44 @@
 
 <head>
   <meta charset="utf-8" />
-  <style>
-    :root { color-scheme: light dark; background-color: light-dark(#eee, #333); }
-  </style>
   <link rel="stylesheet" type="text/css" href="../themes/proton/sidebar.css" id="theme_link">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --zen-border-radius: 5px;
+      --zen-dialog-background: light-dark(#fdfdfd, #171718);
+      --zen-colors-primary-foreground: color-mix(in srgb, #bbb 80%, white 20%);
+    }
+    #root.root {
+      --frame-bg: color-mix(in srgb, var(--zen-dialog-background) 30%, transparent);
+      --frame-fg: var(--zen-colors-primary-foreground);
+      --frame-el-shadow: none;
+      background: linear-gradient(120deg, var(--frame-bg), transparent);
+    }
+    #root.root {--toolbar-el-overlay-active-bg: color-mix(in srgb, var(--zen-dialog-background) 20%, transparent);}
+    #root.root {--toolbar-bg: color-mix(in srgb, var(--zen-dialog-background) 0%, transparent);}
+    #root.root {--toolbar-el-overlay-hover-bg: color-mix(in srgb, var(--zen-dialog-background) 40%, transparent);}
+    #root.root {--nav-btn-border-radius: var(var(--zen-border-radius));}
+    #root.root {--tabs-progress-bg: color-mix(in srgb, var(--zen-dialog-background) 20%, transparent);}
+    #root.root {--tabs-normal-bg: color-mix(in srgb, var(--zen-dialog-background) 30%, transparent);}
+    #root.root {--tabs-activated-bg: color-mix(in srgb, var(--zen-dialog-background) 50%, transparent);}
+    #root.root {--tabs-border-radius: var(--zen-border-radius);}
+    #root.root {--ctx-menu-bg: var(--zen-dialog-background);}
+    .HistoryPanel, .BookmarksSubPanel, .ClosedTabsSubPanel, .NavigationBar .hidden-panels-popup, .SubPanel[data-active=true] .header {
+      background-color: var(--zen-dialog-background);
+      --frame-bg: var(--zen-dialog-background);
+    }
+    .NavigationBar .hidden-panels-popup {
+      border-radius: var(--zen-border-radius);
+    }
+    .SubPanel[data-active=true] .header {
+      border-top-left-radius: var(--zen-border-radius);
+      border-top-right-radius: var(--zen-border-radius);
+    }
+    .TabsPanel .bottom-space, .TabsPanel .new-tab-btns, .TabsPanel .new-tab-btns::after {
+      background-color: transparent;
+    }
+  </style>
 </head>
 
 <body tabindex="-1">
